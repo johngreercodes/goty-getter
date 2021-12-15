@@ -1,2 +1,2 @@
-# backlog-lobster
-search for videogames to add to your backlog!
+# goty getter
+fetches the top video games of any year you want!
