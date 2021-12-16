@@ -1,0 +1,14 @@
+/* https://cssreference.io/ */
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-image: url(unsplash-goat.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: tan;
+}
+
+.games {
+    background-color: darkslategrey;
+    color: whitesmoke;
+}
