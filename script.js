@@ -3,6 +3,32 @@ const gamesUrl = `https://api.rawg.io/api/games`
 const buttonsContainer = document.body.querySelector(`.buttons`)
 const gamesContainer = document.body.querySelector(`.games`)
 
+////////////// 2018 btn
+
+const twenty18btn = document.createElement('button')
+twenty18btn.innerText = '2018'
+buttonsContainer.appendChild(twenty18btn)
+
+const twenty18 = async () => {
+  const getData = await axios.get(gamesUrl, {
+    params: {
+      dates: `2018-01-01,2018-12-31`,
+      ordering: `-rating`,
+      key: apiKey
+    }
+  })
+  for (let i = 0; i < 5; i++) {
+    let game = document.createElement('p')
+    game.innerText = `${i+1}: ${getData.data.results[i].name}`
+    gamesContainer.appendChild(game)
+  }
+}
+
+twenty18btn.addEventListener('click', ()=>{
+  gamesContainer.innerHTML = ``
+  twenty18()
+})
+
 ////////////// 2019 btn
 
 const twenty19btn = document.createElement('button')
