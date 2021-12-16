@@ -3,16 +3,24 @@ const gamesUrl = `https://api.rawg.io/api/games`
 const buttonsContainer = document.body.querySelector(`.buttons`)
 const gamesContainer = document.body.querySelector(`.games`)
 
-////////////// 2018 btn
+years = [2000]
 
-const twenty18btn = document.createElement('button')
-twenty18btn.innerText = '2018'
-buttonsContainer.appendChild(twenty18btn)
+for (let i = 0; years.length < 22; i++) {
+  years.push(years[i]+1)
+}
 
-const twenty18 = async () => {
+////////////// ForEach Loop
+
+years.forEach((year) => {
+  
+const btn = document.createElement('button')
+btn.innerText = `${year}`
+buttonsContainer.appendChild(btn)
+
+const getGames = async () => {
   const getData = await axios.get(gamesUrl, {
     params: {
-      dates: `2018-01-01,2018-12-31`,
+      dates: `${year}-01-01,${year}-12-31`,
       ordering: `-rating`,
       key: apiKey
     }
@@ -24,62 +32,90 @@ const twenty18 = async () => {
   }
 }
 
-twenty18btn.addEventListener('click', ()=>{
+btn.addEventListener('click', ()=>{
   gamesContainer.innerHTML = ``
-  twenty18()
+  getGames()
 })
+
+})
+
+////////////// 2018 btn
+
+// const twenty18btn = document.createElement('button')
+// twenty18btn.innerText = '2018'
+// buttonsContainer.appendChild(twenty18btn)
+
+// const twenty18 = async () => {
+//   const getData = await axios.get(gamesUrl, {
+//     params: {
+//       dates: `2018-01-01,2018-12-31`,
+//       ordering: `-rating`,
+//       key: apiKey
+//     }
+//   })
+//   for (let i = 0; i < 5; i++) {
+//     let game = document.createElement('p')
+//     game.innerText = `${i+1}: ${getData.data.results[i].name}`
+//     gamesContainer.appendChild(game)
+//   }
+// }
+
+// twenty18btn.addEventListener('click', ()=>{
+//   gamesContainer.innerHTML = ``
+//   twenty18()
+// })
 
 ////////////// 2019 btn
 
-const twenty19btn = document.createElement('button')
-twenty19btn.innerText = '2019'
-buttonsContainer.appendChild(twenty19btn)
+// const twenty19btn = document.createElement('button')
+// twenty19btn.innerText = '2019'
+// buttonsContainer.appendChild(twenty19btn)
 
-const twenty19 = async () => {
-  const getData = await axios.get(gamesUrl, {
-    params: {
-      dates: `2019-01-01,2019-12-31`,
-      ordering: `-rating`,
-      key: apiKey
-    }
-  })
-  for (let i = 0; i < 5; i++) {
-    let game = document.createElement('p')
-    game.innerText = `${i+1}: ${getData.data.results[i].name}`
-    gamesContainer.appendChild(game)
-  }
-}
+// const twenty19 = async () => {
+//   const getData = await axios.get(gamesUrl, {
+//     params: {
+//       dates: `2019-01-01,2019-12-31`,
+//       ordering: `-rating`,
+//       key: apiKey
+//     }
+//   })
+//   for (let i = 0; i < 5; i++) {
+//     let game = document.createElement('p')
+//     game.innerText = `${i+1}: ${getData.data.results[i].name}`
+//     gamesContainer.appendChild(game)
+//   }
+// }
 
-twenty19btn.addEventListener('click', ()=>{
-  gamesContainer.innerHTML = ``
-  twenty19()
-})
+// twenty19btn.addEventListener('click', ()=>{
+//   gamesContainer.innerHTML = ``
+//   twenty19()
+// })
 
 ////////////// 2020 btn
 
-const twenty20btn = document.createElement('button')
-twenty20btn.innerText = '2020'
-buttonsContainer.appendChild(twenty20btn)
+// const twenty20btn = document.createElement('button')
+// twenty20btn.innerText = '2020'
+// buttonsContainer.appendChild(twenty20btn)
 
-const twenty20 = async () => {
-  const getData = await axios.get(gamesUrl, {
-    params: {
-      dates: `2020-01-01,2020-12-31`,
-      ordering: `-rating`,
-      key: apiKey
-    }
-  })
-  for (let i = 0; i < 5; i++) {
-    let game = document.createElement('p')
-    game.innerText = `${i+1}: ${getData.data.results[i].name}`
-    gamesContainer.appendChild(game)
-  }
-}
+// const twenty20 = async () => {
+//   const getData = await axios.get(gamesUrl, {
+//     params: {
+//       dates: `2020-01-01,2020-12-31`,
+//       ordering: `-rating`,
+//       key: apiKey
+//     }
+//   })
+//   for (let i = 0; i < 5; i++) {
+//     let game = document.createElement('p')
+//     game.innerText = `${i+1}: ${getData.data.results[i].name}`
+//     gamesContainer.appendChild(game)
+//   }
+// }
 
-twenty20btn.addEventListener('click', ()=>{
-  gamesContainer.innerHTML = ``
-  twenty20()
-})
+// twenty20btn.addEventListener('click', ()=>{
+//   gamesContainer.innerHTML = ``
+//   twenty20()
+// })
 
 // THIS CODE CAN BE USED TO CHECK THE CONNECTION TO THE RAWG API VIA AXIOS
 // const testBtn = document.createElement('button')
