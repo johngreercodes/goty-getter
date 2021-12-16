@@ -1,19 +1,43 @@
-// API reference: https://api.rawg.io/docs/
-// next to-do: hook up button-click with returning API data
+const apiKey = `20862006752d4ed99d821ff4b2a41c0c`
+const gamesUrl = `https://api.rawg.io/api/games`
 
 const btn = document.body.querySelector('#get-games-button')
 
-btn.addEventListener('click', () => {
-    console.log('click click!')
-  })
-
-let gameTest = async () => {
-let gameResults = await axios.get('https://api.rawg.io/api/games', {
-  params: {
-    key: `20862006752d4ed99d821ff4b2a41c0c`
+const axiosTest = async () => {
+  const getData = await axios.get('https://api.rawg.io/api/games', {
+    params: {
+      key: apiKey
+    }})
+  console.log(getData.status)
   }
+
+btn.addEventListener('click', () => {
+  axiosTest()
 })
+
+//////////////
+
+const twenty19btn = document.createElement('button')
+twenty19btn.innerText = '2019'
+document.body.appendChild(twenty19btn)
+
+const twenty19 = async () => {
+  const getData = await axios.get(gamesUrl, {
+    params: {
+      dates: `2019-01-01,2019-12-31`,
+      ordering: `-rating`,
+      key: apiKey
+    }
+  })
+  console.log(getData.data.results)
 }
 
-console.log(gameTest)
-console.log('test')
+newButton.addEventListener('click', ()=>{
+  twenty19();
+})
+
+
+// doc guide: https://rawgthedocs.orels.sh/api/collections/#get-collectionslug
+
+// gets top games of 2019 👇
+// https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating&key=20862006752d4ed99d821ff4b2a41c0c
