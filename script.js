@@ -29,7 +29,9 @@ const twenty19 = async () => {
       key: apiKey
     }
   })
-  console.log(getData.data.results)
+  for (let i = 0; i < 5; i++) {
+    console.log(getData.data.results[i].name)      
+  }
 }
 
 twenty19btn.addEventListener('click', ()=>{
