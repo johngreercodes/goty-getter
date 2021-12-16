@@ -18,8 +18,8 @@ const twenty19 = async () => {
     }
   })
   for (let i = 0; i < 5; i++) {
-    const game = document.createElement('p')
-    game.innerText = `${getData.data.results[i].name}`
+    let game = document.createElement('p')
+    game.innerText = `${i+1}: ${getData.data.results[i].name}`
     gamesContainer.appendChild(game)
   }
 }
@@ -45,7 +45,7 @@ const twenty20 = async () => {
   })
   for (let i = 0; i < 5; i++) {
     let game = document.createElement('p')
-    game.innerText = `${getData.data.results[i].name}`
+    game.innerText = `${i+1}: ${getData.data.results[i].name}`
     gamesContainer.appendChild(game)
   }
 }
