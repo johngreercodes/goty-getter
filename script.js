@@ -38,11 +38,12 @@ const twenty19 = async () => {
   for (let i = 0; i < 5; i++) {
     const game = document.createElement('p')
     game.innerText = `${getData.data.results[i].name}`
-    document.body.querySelector(`.games`).appendChild(game)
+    gamesContainer.appendChild(game)
   }
 }
 
 twenty19btn.addEventListener('click', ()=>{
+  gamesContainer.innerHTML = ``
   twenty19()
 })
 
@@ -63,11 +64,11 @@ const twenty20 = async () => {
   for (let i = 0; i < 5; i++) {
     let game = document.createElement('p')
     game.innerText = `${getData.data.results[i].name}`
-    document.body.querySelector(`.games`).appendChild(game)
+    gamesContainer.appendChild(game)
   }
 }
 
 twenty20btn.addEventListener('click', ()=>{
-  document.body.querySelecot
+  gamesContainer.innerHTML = ``
   twenty20()
 })
