@@ -32,6 +32,6 @@ const twenty19 = async () => {
   console.log(getData.data.results)
 }
 
-newButton.addEventListener('click', ()=>{
+twenty19btn.addEventListener('click', ()=>{
   twenty19();
 })
