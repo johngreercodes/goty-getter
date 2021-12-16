@@ -36,7 +36,7 @@ const getGames = async () => {
     game.innerText = `${i+1}: ${getData.data.results[i].name}`
     gamesContainer.appendChild(game)
   }
-}
+} // end of ForEach loop
 
 // adds click listener to button that (1) clears parent node (2) runs the getGames method
 btn.addEventListener('click', ()=>{
