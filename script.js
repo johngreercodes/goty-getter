@@ -34,7 +34,9 @@ const twenty19 = async () => {
     }
   })
   for (let i = 0; i < 5; i++) {
-    document.querySelector('h3').innerText += getData.data.results[i].name
+    const game = document.createElement('p')
+    game.innerText = `${getData.data.results[i].name}`
+    document.body.appendChild(game)
   }
 }
 
@@ -42,4 +44,3 @@ twenty19btn.addEventListener('click', ()=>{
   twenty19()
 })
 
-// document.querySelector('h3').innerText = 'bye'
