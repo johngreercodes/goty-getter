@@ -48,16 +48,14 @@ btn.addEventListener('click', ()=>{
 }) // end of ForEach loop
 
 
-// creates Night Mode button
+// creates Night Mode button and adds text/class for initial page load
 const darkModeBtn = document.createElement('button')
 darkModeBtn.innerText = `🌚 Toggle Dark Mode`
 darkModeBtn.classList.add('light-dark-button')
-darkModeContainer.appendChild(darkModeBtn)
+darkModeContainer.appendChild(darkModeBtn) 
 
-// creates Light Mode button
+// creates Light Mode button, waits to add text/style in event listener
 const lightModeBtn = document.createElement('button')
-lightModeBtn.innerText = `🌞 Toggle Light Mode`
-lightModeBtn.classList.add('light-dark-button')
 
 // adds click listener to dark mode button 
 darkModeBtn.addEventListener('click', () => {
@@ -65,8 +63,10 @@ darkModeBtn.addEventListener('click', () => {
   pageStyle.backgroundColor = "rgb(11,30,50)"
   pageStyle.color = 'white'
   gamesContainer.style.backgroundColor = "rgb(11,30,50)"
-  // button switch
+  // switches to Light Mode button
   document.body.querySelector('.dark-mode-toggle').innerHTML = ``
+  lightModeBtn.innerText = `🌞 Toggle Light Mode`
+  lightModeBtn.classList.add('light-dark-button')
   darkModeContainer.appendChild(lightModeBtn)
 })
 
@@ -77,7 +77,9 @@ lightModeBtn.addEventListener('click', () => {
   pageStyle.color = 'black'
   gamesContainer.style.backgroundColor = "rgb(209, 209, 219)"
   lightModeBtn.innerText = `🌚 Toggle Dark Mode`
-  // button switch
+  // switches to Dark Mode button
   document.body.querySelector('.dark-mode-toggle').innerHTML = ``
+  darkModeBtn.innerText = `🌚 Toggle Dark Mode`
+  darkModeBtn.classList.add('light-dark-button')
   darkModeContainer.appendChild(darkModeBtn)
 })
