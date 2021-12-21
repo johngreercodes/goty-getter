@@ -3,6 +3,8 @@ const apiKey = `20862006752d4ed99d821ff4b2a41c0c`
 const gamesUrl = `https://api.rawg.io/api/games`
 const buttonsContainer = document.body.querySelector(`.buttons`)
 const gamesContainer = document.body.querySelector(`.games`)
+const darkModeContainer = document.body.querySelector('.dark-mode-toggle')
+const pageStyle = document.body.style
 let years = [2000]
 
 // For Loop that builds our array of years 
@@ -50,33 +52,32 @@ btn.addEventListener('click', ()=>{
 const darkModeBtn = document.createElement('button')
 darkModeBtn.innerText = `🌚 Toggle Dark Mode`
 darkModeBtn.classList.add('light-dark-button')
-document.body.querySelector(`.dark-mode-toggle`).appendChild(darkModeBtn)
+darkModeContainer.appendChild(darkModeBtn)
 
-// creaates Light Mode button
+// creates Light Mode button
 const lightModeBtn = document.createElement('button')
 lightModeBtn.innerText = `🌞 Toggle Light Mode`
 lightModeBtn.classList.add('light-dark-button')
-// document.body.querySelector(`.dark-mode-toggle`).appendChild(lightModeBtn)
 
 // adds click listener to dark mode button 
 darkModeBtn.addEventListener('click', () => {
-  document.body.style.backgroundImage = "url('nightgoat2.jpeg')"
-  document.body.style.backgroundColor = "rgb(11,30,50)"
-  document.body.style.color = 'white'
-  document.body.querySelector('.games').style.backgroundColor = "rgb(11,30,50)"
+  pageStyle.backgroundImage = "url('nightgoat2.jpeg')"
+  pageStyle.backgroundColor = "rgb(11,30,50)"
+  pageStyle.color = 'white'
+  gamesContainer.style.backgroundColor = "rgb(11,30,50)"
   // button switch
   document.body.querySelector('.dark-mode-toggle').innerHTML = ``
-  document.body.querySelector(`.dark-mode-toggle`).appendChild(lightModeBtn)
+  darkModeContainer.appendChild(lightModeBtn)
 })
 
 // adds click listener to light mode button 
 lightModeBtn.addEventListener('click', () => {
-  document.body.style.backgroundImage = "url(unsplash-goat.jpg)"
-  document.body.style.backgroundColor = "rgb(209, 209, 219)"
-  document.body.style.color = 'black'
-  document.body.querySelector('.games').style.backgroundColor = "rgb(209, 209, 219)"
+  pageStyle.backgroundImage = "url(unsplash-goat.jpg)"
+  pageStyle.backgroundColor = "rgb(209, 209, 219)"
+  pageStyle.color = 'black'
+  gamesContainer.style.backgroundColor = "rgb(209, 209, 219)"
   lightModeBtn.innerText = `🌚 Toggle Dark Mode`
   // button switch
   document.body.querySelector('.dark-mode-toggle').innerHTML = ``
-    document.body.querySelector(`.dark-mode-toggle`).appendChild(darkModeBtn)
+  darkModeContainer.appendChild(darkModeBtn)
 })
