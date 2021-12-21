@@ -3,6 +3,7 @@ const apiKey = `20862006752d4ed99d821ff4b2a41c0c`
 const gamesUrl = `https://api.rawg.io/api/games`
 const buttonsContainer = document.body.querySelector(`.buttons`)
 const gamesContainer = document.body.querySelector(`.games`)
+const pageStyle = document.body.style
 let years = [2000]
 
 // For Loop that builds our array of years 
@@ -38,7 +39,18 @@ const getGames = async () => {
 // adds click listener to button that (1) clears parent node (2) runs the getGames method
 btn.addEventListener('click', ()=>{
   gamesContainer.innerHTML = ``
+  gamesContainer.style.padding = `5px`
   getGames()
 })
 
+}) // end of ForEach loop
+
+// creates Night Mode button
+const darkModeBtn = document.createElement('button')
+darkModeBtn.innerText = `🌚 Toggle Dark Mode 🌝`
+document.body.querySelector(`.dark-mode-toggle`).appendChild(darkModeBtn)
+
+// adds click listener to dark mode button that changes style 
+darkModeBtn.addEventListener('click', () => {
+  pageStyle.backgroundImage = "url('nightGoat.jpeg')"
 })

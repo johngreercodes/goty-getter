@@ -10,3 +10,7 @@ body {
     background-color: darkslategrey;
     color: whitesmoke;
 }
+
+.dark-mode-toggle {
+    margin: 10px;
+}
