@@ -61,7 +61,7 @@ lightModeBtn.classList.add('light-dark-button')
 
 // adds click listener to dark mode button 
 darkModeBtn.addEventListener('click', () => {
-  pageStyle.backgroundImage = "url('nightgoat2.jpeg')"
+  pageStyle.backgroundImage = "url('images/nightgoat2.jpeg')"
   pageStyle.backgroundColor = "rgb(11,30,50)"
   pageStyle.color = 'white'
   gamesContainer.style.backgroundColor = "rgb(11,30,50)"
@@ -72,7 +72,7 @@ darkModeBtn.addEventListener('click', () => {
 
 // adds click listener to light mode button 
 lightModeBtn.addEventListener('click', () => {
-  pageStyle.backgroundImage = "url(unsplash-goat.jpg)"
+  pageStyle.backgroundImage = "url('images/unsplash-goat.jpg')"
   pageStyle.backgroundColor = "rgb(209, 209, 219)"
   pageStyle.color = 'black'
   gamesContainer.style.backgroundColor = "rgb(209, 209, 219)"
