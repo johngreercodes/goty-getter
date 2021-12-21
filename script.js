@@ -56,7 +56,7 @@ document.body.querySelector(`.dark-mode-toggle`).appendChild(darkModeBtn)
 const lightModeBtn = document.createElement('button')
 lightModeBtn.innerText = `🌞 Toggle Light Mode`
 lightModeBtn.classList.add('light-dark-button')
-document.body.querySelector(`.dark-mode-toggle`).appendChild(lightModeBtn)
+// document.body.querySelector(`.dark-mode-toggle`).appendChild(lightModeBtn)
 
 // adds click listener to dark mode button 
 darkModeBtn.addEventListener('click', () => {
@@ -64,6 +64,9 @@ darkModeBtn.addEventListener('click', () => {
   document.body.style.backgroundColor = "rgb(11,30,50)"
   document.body.style.color = 'white'
   document.body.querySelector('.games').style.backgroundColor = "rgb(11,30,50)"
+  // button switch
+  document.body.querySelector('.dark-mode-toggle').innerHTML = ``
+  document.body.querySelector(`.dark-mode-toggle`).appendChild(lightModeBtn)
 })
 
 // adds click listener to light mode button 
@@ -72,4 +75,8 @@ lightModeBtn.addEventListener('click', () => {
   document.body.style.backgroundColor = "rgb(209, 209, 219)"
   document.body.style.color = 'black'
   document.body.querySelector('.games').style.backgroundColor = "rgb(209, 209, 219)"
+  lightModeBtn.innerText = `🌚 Toggle Dark Mode`
+  // button switch
+  document.body.querySelector('.dark-mode-toggle').innerHTML = ``
+    document.body.querySelector(`.dark-mode-toggle`).appendChild(darkModeBtn)
 })
