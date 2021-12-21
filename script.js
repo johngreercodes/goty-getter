@@ -51,9 +51,21 @@ const darkModeBtn = document.createElement('button')
 darkModeBtn.innerText = `🌚 Toggle Dark Mode`
 document.body.querySelector(`.dark-mode-toggle`).appendChild(darkModeBtn)
 
-// adds click listener to dark mode button that changes style 
+// adds click listener to dark mode button 
 darkModeBtn.addEventListener('click', () => {
   pageStyle.backgroundImage = "url('nightgoat2.jpeg')"
   pageStyle.backgroundColor = "rgb(11,30,50)"
   pageStyle.color = 'white'
+})
+
+// creaates Light Mode button
+const lightModeBtn = document.createElement('button')
+lightModeBtn.innerText = `🌞 Toggle Light Mode`
+document.body.querySelector(`.dark-mode-toggle`).appendChild(lightModeBtn)
+
+// adds click listener to light mode button 
+lightModeBtn.addEventListener('click', () => {
+  pageStyle.backgroundImage = "url(unsplash-goat.jpg)"
+  pageStyle.backgroundColor = "rgb(209, 209, 219)"
+  pageStyle.color = 'black'
 })
