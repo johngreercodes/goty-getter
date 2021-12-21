@@ -16,6 +16,7 @@ years.forEach((year) => {
   
 // creates button, sets innerText of button, adds button to page
 const btn = document.createElement('button')
+btn.classList.add('year-button')
 btn.innerText = `${year}`
 buttonsContainer.appendChild(btn)
 
@@ -47,10 +48,12 @@ btn.addEventListener('click', ()=>{
 
 // creates Night Mode button
 const darkModeBtn = document.createElement('button')
-darkModeBtn.innerText = `🌚 Toggle Dark Mode 🌝`
+darkModeBtn.innerText = `🌚 Toggle Dark Mode`
 document.body.querySelector(`.dark-mode-toggle`).appendChild(darkModeBtn)
 
 // adds click listener to dark mode button that changes style 
 darkModeBtn.addEventListener('click', () => {
-  pageStyle.backgroundImage = "url('nightGoat.jpeg')"
+  pageStyle.backgroundImage = "url('nightgoat2.jpeg')"
+  pageStyle.backgroundColor = "rgb(11,30,50)"
+  pageStyle.color = 'white'
 })
