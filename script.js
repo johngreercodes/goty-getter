@@ -36,9 +36,9 @@ const getGames = async () => {
     game.innerText = `${i+1}: ${getData.data.results[i].name}`
     gamesContainer.appendChild(game)
   }
-} // end of ForEach loop
+} 
 
-// adds click listener to button that (1) clears parent node (2) runs the getGames method
+// adds click listener to each created button that (1) clears parent node (2) sets style for container (3) runs the getGames method
 btn.addEventListener('click', ()=>{
   gamesContainer.innerHTML = ``
   gamesContainer.style.padding = `5px`
@@ -54,7 +54,7 @@ darkModeBtn.innerText = `🌚 Toggle Dark Mode`
 darkModeBtn.classList.add('light-dark-button')
 darkModeContainer.appendChild(darkModeBtn) 
 
-// creates Light Mode button, waits to add text/style in event listener
+// creates Light Mode button (func is not added until click listener)
 const lightModeBtn = document.createElement('button')
 
 // adds click listener to dark mode button 
@@ -63,7 +63,7 @@ darkModeBtn.addEventListener('click', () => {
   pageStyle.backgroundColor = "rgb(11,30,50)"
   pageStyle.color = 'white'
   gamesContainer.style.backgroundColor = "rgb(11,30,50)"
-  // switches to Light Mode button
+  // button changes into Light Mode button
   document.body.querySelector('.dark-mode-toggle').innerHTML = ``
   lightModeBtn.innerText = `🌞 Toggle Light Mode`
   lightModeBtn.classList.add('light-dark-button')
@@ -77,9 +77,11 @@ lightModeBtn.addEventListener('click', () => {
   pageStyle.color = 'black'
   gamesContainer.style.backgroundColor = "rgb(209, 209, 219)"
   lightModeBtn.innerText = `🌚 Toggle Dark Mode`
-  // switches to Dark Mode button
+  // button changes into Dark Mode button
   document.body.querySelector('.dark-mode-toggle').innerHTML = ``
   darkModeBtn.innerText = `🌚 Toggle Dark Mode`
   darkModeBtn.classList.add('light-dark-button')
   darkModeContainer.appendChild(darkModeBtn)
 })
+
+// future consideration: the light-dark button updates a variable's boolean value, which fulfills a condition that changes the styles. 
